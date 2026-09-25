@@ -1,0 +1,3 @@
+export interface WhatsAppProvider{sendOtp(phone:string,code:string):Promise<void>}
+class WebhookWhatsAppProvider implements WhatsAppProvider{constructor(private url:string,private secret:string){}async sendOtp(phone:string,code:string){const r=await fetch(this.url,{method:'POST',headers:{'content-type':'application/json','authorization':`Bearer ${this.secret}`},body:JSON.stringify({type:'PARTNER_CLAIM_OTP',phone,code})});if(!r.ok)throw new Error('WHATSAPP_PROVIDER_FAILED')}}
+export function whatsappProvider():WhatsAppProvider|null{const url=process.env.WHATSAPP_CLAIM_WEBHOOK_URL?.trim(),secret=process.env.WHATSAPP_CLAIM_WEBHOOK_SECRET?.trim();return url&&secret?new WebhookWhatsAppProvider(url,secret):null}

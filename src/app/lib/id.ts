@@ -1,0 +1,1 @@
+export function publicOrderId(seq:number,date=new Date()){const d=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jakarta',year:'numeric',month:'2-digit',day:'2-digit'}).format(date).replaceAll('-','');return `JB-${d}-${String(seq).padStart(6,'0')}`}

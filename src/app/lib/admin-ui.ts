@@ -1,0 +1,7 @@
+export function intParam(v:string|undefined,def:number,min=1,max=1000){const n=Number(v);return Number.isFinite(n)?Math.min(max,Math.max(min,Math.trunc(n))):def}
+export function pageArgs(sp:Record<string,string|undefined>){const page=intParam(sp.page,1,1,100000);const pageSize=[25,50,100].includes(Number(sp.pageSize))?Number(sp.pageSize):25;return {page,pageSize,skip:(page-1)*pageSize,take:pageSize}}
+export function qs(path:string,sp:Record<string,string|number|undefined|null>){const u=new URL(path,'http://x');for(const [k,v] of Object.entries(sp))if(v!==undefined&&v!==null&&String(v)!=='')u.searchParams.set(k,String(v));return u.pathname+(u.search||'')}
+export function percentChange(current:number,previous:number){if(previous===0)return current===0?0:null;return ((current-previous)/Math.abs(previous))*100}
+export function statusTone(status:string){if(/COMPLETED|PAID|APPROVED|PUBLISHED|RESOLVED|ACCEPTED/.test(status))return 'success';if(/CANCEL|REJECT|FAILED|SUSPENDED|DISPUTED|CLOSED/.test(status))return 'danger';if(/NEW|PENDING|REQUESTED|SEARCHING|REVIEW|PROCESSING|OFFERED|WAITING/.test(status))return 'warning';return ''}
+export function safeJsonRecord(value:unknown):Record<string,unknown>{return value&&typeof value==='object'&&!Array.isArray(value)?value as Record<string,unknown>:{} }
+export function str(v:unknown,fallback='-'){return typeof v==='string'&&v.trim()?v:fallback}

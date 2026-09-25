@@ -1,0 +1,2 @@
+import type {AdminRole} from './auth';
+export const access:Record<string,AdminRole[]>={orders:['OPERATIONS','CS'],dispatch:['OPERATIONS'],customers:['OPERATIONS','CS'],partners:['OPERATIONS','PARTNER_ADMIN'],services:['OPERATIONS'],categories:['OPERATIONS'],areas:['OPERATIONS'],promotions:['OPERATIONS'],finance:['FINANCE'],payouts:['FINANCE'],disputes:['CS','OPERATIONS','FINANCE'],reviews:['CS','OPERATIONS'],reports:['OPERATIONS','FINANCE'],notifications:['OPERATIONS','CS','FINANCE','PARTNER_ADMIN'],cms:['OPERATIONS'],users:[],settings:[],audit:[]};
