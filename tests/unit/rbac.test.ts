@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {access} from '../../src/lib/rbac';describe('admin RBAC matrix',()=>{it('finance has finance access',()=>expect(access.finance).toContain('FINANCE'));it('finance has no operations services access',()=>expect(access.services).not.toContain('FINANCE'));it('cs has dispute access',()=>expect(access.disputes).toContain('CS'))});

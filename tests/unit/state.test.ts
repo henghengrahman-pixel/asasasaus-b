@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {canTransition} from '@/lib/order-state';describe('state',()=>{it('allows lifecycle',()=>{expect(canTransition('ACCEPTED','ON_THE_WAY')).toBe(true)});it('rejects invalid jump',()=>{expect(canTransition('NEW','COMPLETED')).toBe(false)})});

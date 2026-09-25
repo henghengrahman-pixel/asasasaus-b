@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {calculatePrice,commission} from '@/lib/money';describe('money',()=>{it('uses integer rupiah',()=>{expect(calculatePrice(100000,2,[10000],15000)).toEqual({subtotal:210000,discount:15000,total:195000})});it('commission bps',()=>expect(commission(100000,1500)).toBe(15000))});

@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest';import {commission} from '../../src/lib/money';describe('commission rupiah integer',()=>{it('calculates 10 percent without floating money',()=>expect(commission(125000,1000)).toBe(12500));it('rounds down fractional rupiah',()=>expect(commission(99999,1000)).toBe(9999))});
