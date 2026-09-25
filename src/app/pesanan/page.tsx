@@ -1,0 +1,1 @@
+import {Header} from '@/components/Header';export default function Page(){return <><Header/><main className="container section"><h1>Pesanan</h1><div className="card" style={{padding:24}}>Masukkan tautan order yang diberikan setelah checkout. Login OTP customer dapat diaktifkan saat provider OTP dikonfigurasi.</div></main></>}

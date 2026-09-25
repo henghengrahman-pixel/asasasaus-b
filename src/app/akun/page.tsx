@@ -1,0 +1,1 @@
+import {Header} from '@/components/Header';export default function Page(){return <><Header/><main className="container section"><h1>Akun</h1><div className="card" style={{padding:24}}>Customer dapat masuk dengan nomor HP + OTP setelah provider OTP dikonfigurasi.</div></main></>}

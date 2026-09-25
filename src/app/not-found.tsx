@@ -1,0 +1,1 @@
+import Link from 'next/link';export default function NF(){return <main className="container section"><h1>404</h1><p>Halaman tidak ditemukan.</p><Link className="btn primary" href="/">Kembali ke Beranda</Link></main>}

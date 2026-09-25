@@ -1,0 +1,2 @@
+import {requirePartner} from '@/lib/partner-auth';import {storefrontData} from '@/lib/storefront-data';import {PartnerStorefrontView} from '@/components/PartnerStorefrontView';
+export const metadata={title:'Preview Profil Toko | JasaBatam',robots:{index:false,follow:false}};export default async function Page(){const a=await requirePartner();const d=await storefrontData(a.partner.id,true);return <PartnerStorefrontView d={d} preview/>}

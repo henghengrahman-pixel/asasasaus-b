@@ -1,0 +1,1 @@
+import {Header} from '@/components/Header';export default function Page(){return <><Header/><main className="container section"><h1>Chat</h1><div className="card" style={{padding:24}}>Chat tersedia dari detail order setelah identitas customer terverifikasi.</div></main></>}
